@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jbpm.apps</groupId>
+  <artifactId>sample-okta</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Sample - OKTA</name>
+
+  <modules>
+    <module>sample-okta-model</module>
+    <module>sample-okta-kjar</module>
+    <module>sample-okta-service</module>
+  </modules>
+</project>
