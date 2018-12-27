@@ -5,7 +5,7 @@ to add SSO functionality to it using Okta (https://www.okta.com/).
  
 ![Sample of demo 1](img/oktademo2.png?raw=true)
 
-![Sample of demo 2](img/oktademo1.png?raw=true)
+![Sample of demo 2](img/oktademo.png?raw=true)
 
 This demo is a minimal setup to get SSO running with Okta, for more details and information
 how to take things further take a look at:
