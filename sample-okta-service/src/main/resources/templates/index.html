@@ -12,11 +12,32 @@
 </head>
 <body>
 
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-light bg-light">
     <div class="justify-content-center" id="navbarSupportedContent">
-        <a class="navbar-brand" href="#">Logged in as: <span th:text="${user}"/></a>
+        <span class="navbar-text">jBPM + Okta SSO Demo</span>
     </div>
 </nav>
+
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">User</th>
+            <th scope="col">Authenticated</th>
+            <th scope="col">Session Id</th>
+            <th scope="col">Token Type</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${user}">User</td>
+            <td th:text="${authenticated}">Authenticated</td>
+            <td th:text="${authdetails.sessionId}">Session Id</td>
+            <td th:text="${authdetails.tokenType}">Token Type</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
