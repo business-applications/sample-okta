@@ -2,10 +2,6 @@
 
 This is a demo business application built with https://start.jbpm.org and expanded
 to add SSO functionality to it using Okta (https://www.okta.com/).
- 
-![Sample of demo 1](img/oktademo2.png?raw=true)
-
-![Sample of demo 2](img/oktademo.png?raw=true)
 
 This demo is a minimal setup to get SSO running with Okta, for more details and information
 how to take things further take a look at:
@@ -26,12 +22,17 @@ https://github.com/oktadeveloper/okta-spring-security-roles-example
 2. Create an account on https://developer.okta.com. Once logged in create a new application
 You can use this info in General settings of your application:
 
-![Sample of demo 3](img/oktademo3.png?raw=true)
+![Okta app setup](img/oktademo3.png?raw=true)
 
 Once your application is generated look at your Client Id and Client secret of your app. You will need 
 those. Then go to API->Authorization Servers and copy your authorization server url. 
 
-3. Edit your sample-okta/sample-okta-service/src/main/resources/application.properties. Specifically the section:
+3. Create two new groups called "Admin" and "Sales". Assign your user to the Admin group as well (and add the group to 
+your created application). This will allow you to test the index and the sales pages of the demo app.
+
+![Okta groups setup](img/oktademo5.png?raw=true)
+
+4. Edit your sample-okta/sample-okta-service/src/main/resources/application.properties. Specifically the section:
 
 ```
 #okta config
@@ -40,15 +41,52 @@ okta.oauth2.clientId={your_client_id}
 okta.oauth2.clientSecret={your_client_secret}
 ```
    
-4. Start your Business Application:
+5. Start your Business Application:
 In your business app service module run:
 ```
 ./launch.sh clean install(or launch.bat clean install for windows)
 ```
 
-## Login using SSO
-If you are still logged in with developer.okta.com your app should already log you in and show the 
-index page. If this is the case go ahead and delete your browser cookies and navigate to localhost:8090 again.
-At this point you will be redirected to the okta auth server url and presented a login screen. 
-If you authenticate with that you will be redirected to your apps index page which should show your 
-login email address.
+
+## Interacting with the demo
+Once your business application is started, you can interact with the demo by launching a browser and going to
+
+```
+http://localhost:8090
+```
+
+If you are already logged in with developer.okta.com your app should automatically log you in and show the "Admin" page.
+for your user (if you have created an Admin group in Okta and assigned your user to it).
+To force a login via Okta we recommend to delete your browser cookies at this point.
+
+With cookies deleted you should see the following Okta login page:
+
+![Demo Login](img/oktademo2.png?raw=true)
+
+(With the username and password being yours of course...).
+
+Once you log in you will see the "Admin" index page:
+
+![Demo Admin Page](img/oktademo.png?raw=true)
+
+(Again the info should be of your user that you logged in with).
+
+If you try going to 
+
+```
+http://localhost:8090/sales
+```
+
+You will be presented with a "403" page, like this one:
+
+![Demo 403 Page](img/oktademo4.png?raw=true)
+
+You can go back to developer.okta.com, and create a new group called "Sales". Add your user to that group and then 
+add that group to your Okta application. When you have that done your use should also be in the "Sales" group
+which will grant it access to 
+
+```
+http://localhost:8090/sales
+```
+
+You can play with groups and access to different pages of your demo app as you wish. 
