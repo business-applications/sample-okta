@@ -3,12 +3,13 @@
 This is a demo business application built with https://start.jbpm.org and expanded
 to add SSO functionality to it using Okta (https://www.okta.com/).
 
-This demo is a minimal setup to get SSO running with Okta, for more details and information
-how to take things further take a look at:
+It shows how easy it is to set up SSO with your jBPM Business applications. It also shows 
+how to display pages based on authentication information.
+
+For further information on Okta based setups with Spring Boot you can look at
 https://developer.okta.com/blog/2017/10/13/okta-groups-spring-security
 and
 https://github.com/oktadeveloper/okta-spring-security-roles-example 
-
 
 ## Getting Started 
 1. Clone this repository locally:

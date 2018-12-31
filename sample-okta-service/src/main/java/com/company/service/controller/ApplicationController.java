@@ -1,4 +1,4 @@
-package com.company.service;
+package com.company.service.controller;
 
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
