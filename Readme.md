@@ -91,3 +91,5 @@ http://localhost:8090/sales
 ```
 
 You can play with groups and access to different pages of your demo app as you wish. 
+
+For more info view this youtube video: https://www.youtube.com/watch?v=luIiXnYxE5I
