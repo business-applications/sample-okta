@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @EnableOAuth2Sso
 @Configuration("kieServerSecurity")
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class DefaultWebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override

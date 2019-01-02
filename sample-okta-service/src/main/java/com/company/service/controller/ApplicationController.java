@@ -39,7 +39,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/sales")
-    @PostAuthorize("hasAuthority('Sales')")
+    @PreAuthorize("hasAuthority('Sales')")
     public String showSalesPage(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String principal = (String) auth.getPrincipal();
